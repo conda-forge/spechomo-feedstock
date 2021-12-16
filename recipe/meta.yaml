@@ -1,5 +1,5 @@
 {% set name = "spechomo" %}
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/spechomo-{{ version }}.tar.gz
-  sha256: b48714b3bc36e57f3de121203d8cf94a60c9142e1d658d4cbe4c2698ca937a6e
+  sha256: cf5d57008cbd32c8777097f32d29a4d384c3521917921f5023f287577acc38ab
 
 build:
   number: 0
