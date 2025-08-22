@@ -1,5 +1,6 @@
 {% set name = "spechomo" %}
-{% set version = "0.10.3" %}
+{% set version = "0.10.4" %}
+{% set python_min = "3.9" %}
 
 
 package:
@@ -8,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/spechomo-{{ version }}.tar.gz
-  sha256: 0c3f4139e293150923ffeff9b4a8109a2e73ed36d4d7d7467ddd21747b9d255c
+  sha256: ad0b15b5d885419265cc1d663b92b2cd8359787cfd394c4de59f07ac44549961
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -19,6 +20,7 @@ requirements:
   host:
     - pip
     - python {{ python_min }}
+    - setuptools
     - setuptools-git
   run:
     - dill
@@ -26,13 +28,13 @@ requirements:
     - matplotlib-base
     - natsort
     - nested_dict
-    - numpy
+    - numpy <2
     - pandas
     - pyrsr >=0.5.0
     - python >={{ python_min }}
     - pyyaml
-    - scikit-learn >=0.23.2
-    - scipy
+    - scikit-learn >=0.23.2,<1
+    - scipy <1.11
     - seaborn
     - specclassify >=0.3.0
     - tabulate
